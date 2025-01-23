@@ -21,12 +21,12 @@ const ProductQuickView = ({product, onClose}) => {
   if (!product) return null;
 
   const handleAddToCart = (product) => {
-    if(!selectedSize) {
-      toast.warn('Please select size')
+    if (product.sizes?.length > 0 && !selectedSize) {
+      toast.warn('Please select a size');
     } else {
-      dispatch(addCart(product, selectedSize));
+      dispatch(addCart({ ...product, selectedSize }));
     }
-  }
+  };
 
   return (
     <Dialog open={!!product} onClose={onClose} className="relative z-10">
@@ -134,7 +134,7 @@ const ProductQuickView = ({product, onClose}) => {
 
                         <RadioGroup
                           value={selectedSize}
-                          onChange={setSelectedSize}
+                          onChange={(value) => setSelectedSize(value)}
                           className="mt-4 grid grid-cols-4 gap-4"
                         >
                           {product.sizes.map((size) => (

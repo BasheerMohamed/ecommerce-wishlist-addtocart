@@ -1,48 +1,13 @@
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import { CQuestionMarkCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
-import { useSelector } from 'react-redux'
-import { selectCart, selectTotal, updateQuantity } from '../Redux/slice'
-
-const products = [
-  {
-    id: 1,
-    name: 'Basic Tee',
-    href: '#',
-    price: '$32.00',
-    color: 'Sienna',
-    inStock: true,
-    size: 'Large',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in sienna.",
-  },
-  {
-    id: 2,
-    name: 'Basic Tee',
-    href: '#',
-    price: '$32.00',
-    color: 'Black',
-    inStock: false,
-    leadTime: '3–4 weeks',
-    size: 'Large',
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-02.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-  {
-    id: 3,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '$35.00',
-    color: 'White',
-    inStock: true,
-    imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-03.jpg',
-    imageAlt: 'Insulated bottle with white base and black snap lid.',
-  },
-]
+import { QuestionMarkCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeCart, selectCart, selectTotal, updateQuantity } from '../Redux/slice'
 
 const ShoppingCart = () => {
 
   const total = useSelector(selectTotal);
   const carts = useSelector(selectCart);
+  const dispatch = useDispatch();
 
   return (
     <div className="bg-white">
@@ -77,8 +42,8 @@ const ShoppingCart = () => {
                         </div>
                         <div className="mt-1 flex text-sm">
                           <p className="text-gray-500">{cart.color}</p>
-                          {cart.selectSize ? (
-                            <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{cart.selectSize}</p>
+                          {cart.selectedSize ? (
+                            <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{cart.selectedSize}</p>
                           ) : null}
                         </div>
                         <p className="mt-1 text-sm font-medium text-gray-900">${cart.price}</p>
@@ -93,7 +58,7 @@ const ShoppingCart = () => {
                             value={cart.quantity}
                             onChange={(e) => {
                               const newQuantity = parseInt(e.target.value);
-                              dispatch(updateQuantity({ id: cart.id, newQuantity }));
+                              dispatch(updateQuantity({ id: cart.id, selectedSize: cart.selectedSize, newQuantity }));
                             }}
                           >
                             <option value={1}>1</option>
@@ -112,7 +77,7 @@ const ShoppingCart = () => {
                         </div>
 
                         <div className="absolute top-0 right-0">
-                          <button type="button" className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
+                          <button type="button"  onClick={() => dispatch(removeCart({ id: cart.id, selectedSize: cart.selectedSize }))} className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
                             <span className="sr-only">Remove</span>
                             <XMarkIcon aria-hidden="true" className="size-5" />
                           </button>

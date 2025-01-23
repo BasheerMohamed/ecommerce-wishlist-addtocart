@@ -9,3 +9,7 @@
         @apply font-outfit;
     }
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

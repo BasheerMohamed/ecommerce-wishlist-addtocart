@@ -1,23 +1,20 @@
 import React, { useState } from 'react'
 import ProductQuickView from './ProductQuickView';
-import products from '../assets/Products';
-import { HeartIcon } from '@heroicons/react/24/outline';
 import { useDispatch, useSelector } from 'react-redux';
-import { addWishlist, selectWishlist } from '../Redux/slice';
+import { removeWishlist, selectWishlist, selectWishlistCount } from '../Redux/slice';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
-const ProductList = () => {
-
+const WishlistProductList = () => {
     const [showProductView, setShowProductView] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     const dispatch = useDispatch();
     const wishlist = useSelector(selectWishlist);
+    const wishlistCount = useSelector(selectWishlistCount);
 
     const handleWishList = (product) => {
-      dispatch(addWishlist(product));
+      dispatch(removeWishlist(product));
     }
-  
-    const containWishlist = (id) => wishlist.some((item) => item.id == id);
 
       const handleShowProductView = (product) => {
         setSelectedProduct(product);
@@ -32,9 +29,9 @@ const ProductList = () => {
       return (
         <div className="bg-white">
           <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">You have {wishlistCount} items in your wishlist.</h2>
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {products.map((product) => (
+              {wishlist.map((product) => (
                 <div onClick={() => handleShowProductView(product)} key={product.id} className="group relative">
                   <img
                     alt={product.imageAlt}
@@ -56,7 +53,7 @@ const ProductList = () => {
                   <button onClick={(e) => {
                     e.stopPropagation();
                     handleWishList(product);}} className='absolute flex items-center justify-center w-7 h-7 rounded bg-gray-800 top-5 left-5 cursor-pointer'>
-                    <HeartIcon fill={containWishlist(product.id) ? '#FF7F7F' : 'white'} stroke={containWishlist(product.id) ? '#FF7F7F' : ''} className='w-4' />  
+                    <XMarkIcon stroke='white' strokeWidth={2} className='w-4' />  
                   </button>
                 </div>
               ))}
@@ -67,4 +64,4 @@ const ProductList = () => {
       )
 }
 
-export default ProductList
+export default WishlistProductList
