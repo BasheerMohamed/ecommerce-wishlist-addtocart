@@ -1,3 +1,5 @@
+import { assets } from './assets'
+
 const products = [
     {
       id: 1,
@@ -5,7 +7,7 @@ const products = [
       href: '#',
       rating: 3.9,
       reviewCount: 117,
-      imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      imageSrc: assets.basic_tee_1,
       imageAlt: "Front of men's Basic Tee in black.",
       price: 35,
       color: 'Black',
@@ -33,7 +35,7 @@ const products = [
         color: 'Multi Color',
         description: 'Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.',
         options: '8 colors',
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-01.jpg',
+        imageSrc: assets.basic_tee_8_Pack_1,
         imageAlt: 'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
         colors: [
             { name: 'Teal', class: 'bg-teal-900', selectedClass: 'ring-teal-900' },
@@ -79,7 +81,7 @@ const products = [
             { name: 'XXL', inStock: true },
             { name: 'XXXL', inStock: false },
         ],
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+        imageSrc: assets.basic_tee_8_Pack_2,
         imageAlt: 'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
       },
       {
@@ -103,7 +105,7 @@ const products = [
             { name: 'XXL', inStock: true },
             { name: 'XXXL', inStock: true },
         ],
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-01.jpg',
+        imageSrc: assets.basic_tee_2,
         imageAlt: "Front of men's Basic Tee in sienna.",
       },
       {
@@ -127,7 +129,7 @@ const products = [
             { name: 'XXL', inStock: true },
             { name: 'XXXL', inStock: true },
         ],
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/checkout-page-03-product-04.jpg',
+        imageSrc: assets.artwork_tee,
         imageAlt: 'Front side of mint cotton t-shirt with wavey lines pattern.',
       },
       {
@@ -141,7 +143,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+        imageSrc: assets.throwback_hip_bag,
         imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
       },
       {
@@ -155,7 +157,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+        imageSrc: assets.medium_stuff_satchel,
         imageAlt:
           'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
       },
@@ -170,7 +172,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-01-product-03.jpg',
+        imageSrc: assets.normal_tumbler_1,
         imageAlt: 'Insulated bottle with white base and black snap lid.',
       },
       {
@@ -184,7 +186,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-quick-preview-03-detail.jpg',
+        imageSrc: assets.everyday_ruck_snack,
         imageAlt: 'Interior of light green canvas bag with padded laptop sleeve and internal organization pouch.',
       },
       {
@@ -198,7 +200,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-03-product-04.jpg',
+        imageSrc: assets.zip_tote_basket,
         imageAlt: 'Back angled view with bag open and handles to the side.',
       },
       {
@@ -212,7 +214,7 @@ const products = [
         ],
         rating: 2.3,
         reviewCount: 470,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-01.jpg',
+        imageSrc: assets.micro_backpack,
         imageAlt: 'Moss green canvas compact backpack with double top zipper, zipper front pouch, and matching carry handle and backpack straps.',
       },
       {
@@ -236,7 +238,7 @@ const products = [
           { name: 'XXL', inStock: true },
           { name: 'XXXL', inStock: true },
       ],
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/checkout-page-05-product-01.jpg',
+        imageSrc: assets.women_basic_tee,
         imageAlt: "Front of women's basic tee in heather gray.",
       },
       {
@@ -260,7 +262,7 @@ const products = [
           { name: 'XXL', inStock: true },
           { name: 'XXXL', inStock: true },
       ],
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/checkout-form-04-product-01.jpg',
+        imageSrc: assets.mountain_mist_artwork_tee,
         imageAlt: 'Off-white t-shirt with circular dot illustration on the front of mountain ridges that fade.',
       },
       {
@@ -275,7 +277,7 @@ const products = [
         ],
         rating: 4.5,
         reviewCount: 1500,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/checkout-page-07-product-01.jpg',
+        imageSrc: assets.high_wall_tote,
         imageAlt: 'Front of zip tote bag with white canvas, white handles, and black drawstring top.',
       },
       {
@@ -289,7 +291,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/confirmation-page-03-product-01.jpg',
+        imageSrc: assets.normal_tumbler_2,
         imageAlt: 'Insulated bottle with white base and black snap lid.',
       },
       {
@@ -303,7 +305,7 @@ const products = [
         ],
         rating: 2,
         reviewCount: 2,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/confirmation-page-03-product-02.jpg',
+        imageSrc: assets.minimalist_wristwatch,
         imageAlt:
           'Arm modeling wristwatch with black leather band, white watch face, thin watch hands, and fine time markings.',
       },
@@ -318,7 +320,7 @@ const products = [
         ],
         rating: 2.9,
         reviewCount: 90,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/confirmation-page-05-product-01.jpg',
+        imageSrc: assets.cold_brew_bottle,
         imageAlt: 'Glass bottle with black plastic pour top and mesh insert.',
       },
       {
@@ -332,7 +334,7 @@ const products = [
         ],
         rating: 4.9,
         reviewCount: 290,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/order-history-page-02-product-01.jpg',
+        imageSrc: assets.machined_pen_and_pencil_set,
         imageAlt: 'Detail of mechanical pencil tip with machined black steel shaft and chrome lead tip.',
       },
       {
@@ -346,7 +348,7 @@ const products = [
         ],
         rating: 3.9,
         reviewCount: 150,
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/order-history-page-06-product-01.jpg',
+        imageSrc: assets.normal_tumbler_3,
         imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
       },
       {
@@ -360,7 +362,7 @@ const products = [
         colors: [
             { name: 'Brass', class: 'bg-orange-200', selectedClass: 'ring-orange-200' },
         ],
-        imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/order-history-page-07-product-01.jpg',
+        imageSrc: assets.machined_brass_puzzle,
         imageAlt: 'Brass puzzle in the shape of a jack with overlapping rounded posts.',
       },
 ]
