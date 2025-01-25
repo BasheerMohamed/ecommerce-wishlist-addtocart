@@ -20,7 +20,9 @@ const ProductQuickView = ({product, onClose}) => {
 
   if (!product) return null;
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (e, product) => {
+    e.preventDefault();
+
     if (product.sizes?.length > 0 && !selectedSize) {
       toast.warn('Please select a size');
     } else {
@@ -181,7 +183,7 @@ const ProductQuickView = ({product, onClose}) => {
                       <button
                         type="submit"
                         className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
-                        onClick={() => handleAddToCart(product, selectedSize)}
+                        onClick={(e) => handleAddToCart(e, product)}
                       >
                         Add to bag
                       </button>
